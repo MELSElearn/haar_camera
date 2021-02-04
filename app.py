@@ -28,7 +28,7 @@ def test_message(input):
     #image_data = image_data.decode("utf-8")
 
     img = imread(io.BytesIO(base64.b64decode(image_data)))
-    im_rgb = cv2.cvtColor(im_cv, cv2.COLOR_BGR2RGB)
+    im_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     cv2_img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     
     #Facecascde = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
