@@ -25,4 +25,3 @@ Matplotlib==2.0.1
 pybase64==1.0.1
 python-time==0.3.0
 threaded==4.1.0
-
