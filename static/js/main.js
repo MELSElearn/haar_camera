@@ -49,7 +49,7 @@ $(document).ready(function(){
 
     setInterval(function () {
       sendSnapshot();
-    }, 50);
+    }, 100);
   }).catch(function(error) {
     console.log(error);
   });
