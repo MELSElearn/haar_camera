@@ -29,6 +29,12 @@ def test_message(input):
 
     img = imread(io.BytesIO(base64.b64decode(image_data)))
     cv2_img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    
+    Facecascde = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    faces = Facecascde.detectMultiScale(cv2_img, 1.5, 3)
+    for (x, y, w, h) in faces:
+        cv2_img = cv2.rectangle(cv2_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    
     cv2.imwrite("reconstructed.jpg", cv2_img)
     retval, buffer = cv2.imencode('.jpg', cv2_img)
     b = base64.b64encode(buffer)
