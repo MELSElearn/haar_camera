@@ -6,6 +6,6 @@ COPY . ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV PORT 5000
+ENV PORT 443
 
 CMD gunicorn --bind :$PORT app:app
